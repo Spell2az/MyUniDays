@@ -25,6 +25,16 @@ namespace MyUniDays
             }
         }
 
+        public void AddToBasketBulk(string items)
+        {
+            char[] itemsList = items.ToCharArray();
+
+            foreach (char item in itemsList)
+            {
+                AddToBasket(item);
+            }
+        }
+
         public decimal CalculateTotal()
         {
             decimal totalPrice = 0;
