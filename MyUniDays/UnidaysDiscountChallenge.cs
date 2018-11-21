@@ -5,7 +5,7 @@ namespace MyUniDays
     public class UnidaysDiscountChallenge
     {
         public decimal Total => CalculateTotal();
-        public decimal DeliveryCharge => Total > 50.0m ? 0.0m : 7.0m;
+        public decimal DeliveryCharge => Total < 50.0m ? 7.0m : 0.0m;
         public Dictionary<char, int> Basket  = new Dictionary<char, int>();
         private PricingRules pricingRules;
 
