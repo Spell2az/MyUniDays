@@ -2,6 +2,6 @@
 {
     public interface IDiscountPrice
     {
-        decimal GetDiscountPrice(decimal price, int quantity);
+        decimal GetDiscountPrice(int quantity, decimal unitPrice);
     }
 }
