@@ -46,8 +46,10 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Discount.cs" />
-    <Compile Include="Enums\DiscountType.cs" />
-    <Compile Include="Interfaces\IGetDiscount.cs" />
+    <Compile Include="Discounts\GetMForNItems.cs" />
+    <Compile Include="Discounts\GetMItemsForNPrice.cs" />
+    <Compile Include="Discounts\NoDiscount.cs" />
+    <Compile Include="Interfaces\IDiscountPrice.cs" />
     <Compile Include="ItemInfo.cs" />
     <Compile Include="PricingRules.cs" />
     <Compile Include="Program.cs" />
