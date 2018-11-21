@@ -7,8 +7,9 @@ using MyUniDays.Interfaces;
 
 namespace MyUniDays.Discounts
 {
-    public class NoDiscount : IDiscountPrice 
-    {
-        public decimal GetDiscountPrice(decimal price, int quantity) => quantity * price;
+    public class NoDiscount : IDiscountPrice
+    { 
+        public decimal GetDiscountPrice(int quantity, decimal unitPrice) => quantity * unitPrice;
+
     }
 }

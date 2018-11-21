@@ -14,9 +14,9 @@ namespace MyUniDays.Discounts
             this.n = n;
         }
 
-        public decimal GetDiscountPrice(decimal price, int quantity)
+        public decimal GetDiscountPrice(int quantity, decimal unitPrice)
         {
-            return (Math.Floor((decimal) quantity / m) * n) + (quantity % m) * price;
+            return (Math.Floor((decimal)quantity / m) * n) + (quantity % m) * unitPrice;
         }
     }
     }
