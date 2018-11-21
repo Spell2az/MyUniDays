@@ -9,21 +9,19 @@ namespace MyUniDays
 {
     public class ItemInfo
     {
-        private IDiscountPrice discount;
         public decimal Price { get; set; }
         public char ItemCode { get; set; }
        
 
-        public ItemInfo(decimal price, char itemCode, IDiscountPrice discount)
+        public ItemInfo(decimal price, char itemCode)
         {
             Price = price;
             ItemCode = itemCode;
-            this.discount = discount;
         }
 
         public decimal ApplyDiscount(int quantity)
         {
-            return discount.GetDiscountPrice(Price, quantity);
+            throw new NotImplementedException();
         }
     }
 }

@@ -5,7 +5,7 @@ VisualStudioVersion = 15.0.28010.2016
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MyUniDays", "MyUniDays\MyUniDays.csproj", "{2F3079FF-D2E3-4604-A40B-5B722D3BC29F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UnidaysDiscountChallengeUnitTests", "UnitTests\UnidaysDiscountChallengeUnitTests.csproj", "{706DEA33-561A-4B3A-B5D0-C4F2032B6ACB}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UnitTests", "UnitTests\UnitTests.csproj", "{706DEA33-561A-4B3A-B5D0-C4F2032B6ACB}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
