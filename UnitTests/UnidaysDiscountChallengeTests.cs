@@ -1,7 +1,9 @@
 ﻿using System;
+using Microsoft.VisualStudio.TestTools.UnitTesting;
 using MyUniDays;
 using MyUniDays.Discounts;
 using NUnit.Framework;
+using Assert = NUnit.Framework.Assert;
 
 namespace UnitTests
 {
@@ -12,11 +14,11 @@ namespace UnitTests
         {
             var pricingRules = new PricingRules();
 
-            var pricingRuleA = new ItemInfo(8.0m, 'A', new NoDiscount());
-            var pricingRuleB = new ItemInfo(12.0m, 'B', new GetMItemsForNPrice(2, 20m));
-            var pricingRuleC = new ItemInfo(4.0m, 'C', new GetMItemsForNPrice(3, 10m));
-            var pricingRuleD = new ItemInfo(7.0m, 'D', new GetMForNItems(2, 1));
-            var pricingRuleE = new ItemInfo(5.0m, 'E', new GetMForNItems(3, 2));
+            var pricingRuleA = new PricingRule(8.0m, 'A', new NoDiscount());
+            var pricingRuleB = new PricingRule(12.0m, 'B', new GetMItemsForNPrice(2, 20m));
+            var pricingRuleC = new PricingRule(4.0m, 'C', new GetMItemsForNPrice(3, 10m));
+            var pricingRuleD = new PricingRule(7.0m, 'D', new GetMItemsPayForNItems(2, 1));
+            var pricingRuleE = new PricingRule(5.0m, 'E', new GetMItemsPayForNItems(3, 2));
 
             pricingRules.AddPricingRule(pricingRuleA);
             pricingRules.AddPricingRule(pricingRuleB);
@@ -25,6 +27,14 @@ namespace UnitTests
             pricingRules.AddPricingRule(pricingRuleE);
 
             return pricingRules;
+        }
+
+        [Test]
+        
+        public void TestAddingItemToBasketNotInThePricingRules_ThrowsException_itemR()
+        {
+            var discounts = new UnidaysDiscountChallenge(PricingRulesSetup());
+            Assert.That(() => discounts.AddToBasket('R'), Throws.TypeOf<ArgumentException>());
         }
 
         [Test]
