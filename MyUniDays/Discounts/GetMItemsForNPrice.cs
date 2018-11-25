@@ -8,6 +8,7 @@ namespace MyUniDays.Discounts
         private int getMItems;
         private decimal payNPrice;
 
+        
         public GetMItemsForNPrice(int getMItems, decimal payNPrice)
         {
             this.getMItems = getMItems;

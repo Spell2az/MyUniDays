@@ -32,7 +32,6 @@ namespace MyUniDays
             {
                throw new ArgumentException("Cannot find this item in the pricing rules");
             }
-            
         }
 
         public void AddToBasketBulk(string items)

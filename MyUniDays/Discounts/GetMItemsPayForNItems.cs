@@ -17,7 +17,7 @@ namespace MyUniDays.Discounts
 
             public decimal GetDiscountPrice(int quantity, decimal unitPrice)
             {
-                return unitPrice * ((decimal) (Math.Floor((double)quantity / getMItems) * payForNItems) + quantity % getMItems);
+                return unitPrice * (Math.Floor((decimal)quantity / getMItems) * payForNItems + quantity % getMItems);
             }
         }
     }

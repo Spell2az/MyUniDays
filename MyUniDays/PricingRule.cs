@@ -13,7 +13,6 @@ namespace MyUniDays
         public decimal Price { get; set; }
         public char ItemCode { get; set; }
        
-
         public PricingRule(decimal price, char itemCode, IDiscountPrice discount)
         {
             Price = price;
