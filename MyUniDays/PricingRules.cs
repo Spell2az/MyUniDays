@@ -8,14 +8,14 @@ namespace MyUniDays
 {
     public class PricingRules
     {
-        public List<ItemInfo> ItemInfoList { get; } = new List<ItemInfo>();
+        public List<PricingRule> PricingRulesList { get; } = new List<PricingRule>();
 
-        public void AddPricingRule(ItemInfo itemInfo) => ItemInfoList.Add(itemInfo);
+        public void AddPricingRule(PricingRule itemInfo) => PricingRulesList.Add(itemInfo);
         public decimal GetTotalForItemType(char itemCode, int quantity)
         {
             var total = 0.0m;
 
-            if (ItemInfoList.Exists(item => item.ItemCode == itemCode))
+            if (PricingRuleExists(itemCode))
             {
                 var itemInfo = GetItemInfo(itemCode);
                 total = itemInfo.ApplyDiscount(quantity);
@@ -24,9 +24,11 @@ namespace MyUniDays
             return total;
         }
 
-        public ItemInfo GetItemInfo(char itemCode)
+        public PricingRule GetItemInfo(char itemCode)
         {
-            return ItemInfoList.Find(item => item.ItemCode == itemCode);
+            return PricingRulesList.Find(item => item.ItemCode == itemCode);
         }
+
+        public bool PricingRuleExists(char itemCode) => PricingRulesList.Exists(item => item.ItemCode == itemCode);
     }
 }

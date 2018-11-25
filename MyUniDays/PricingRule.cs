@@ -7,14 +7,14 @@ using MyUniDays.Interfaces;
 
 namespace MyUniDays
 {
-    public class ItemInfo
+    public class PricingRule
     {
         private IDiscountPrice discount;
         public decimal Price { get; set; }
         public char ItemCode { get; set; }
        
 
-        public ItemInfo(decimal price, char itemCode, IDiscountPrice discount)
+        public PricingRule(decimal price, char itemCode, IDiscountPrice discount)
         {
             Price = price;
             ItemCode = itemCode;

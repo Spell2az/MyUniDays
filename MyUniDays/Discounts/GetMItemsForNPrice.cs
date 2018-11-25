@@ -5,18 +5,18 @@ namespace MyUniDays.Discounts
 {
     public class GetMItemsForNPrice : IDiscountPrice
     {
-        private int m;
-        private decimal n;
+        private int getMItems;
+        private decimal payNPrice;
 
-        public GetMItemsForNPrice(int m, decimal n)
+        public GetMItemsForNPrice(int getMItems, decimal payNPrice)
         {
-            this.m = m;
-            this.n = n;
+            this.getMItems = getMItems;
+            this.payNPrice = payNPrice;
         }
 
         public decimal GetDiscountPrice(int quantity, decimal unitPrice)
         {
-            return (Math.Floor((decimal)quantity / m) * n) + (quantity % m) * unitPrice;
+            return (Math.Floor((decimal)quantity / getMItems) * payNPrice) + (quantity % getMItems) * unitPrice;
         }
     }
     }

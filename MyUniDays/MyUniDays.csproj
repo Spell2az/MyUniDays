@@ -45,11 +45,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Discounts\GetMForNItems.cs" />
+    <Compile Include="Discounts\GetMItemsPayForNItems.cs" />
     <Compile Include="Discounts\GetMItemsForNPrice.cs" />
     <Compile Include="Discounts\NoDiscount.cs" />
     <Compile Include="Interfaces\IDiscountPrice.cs" />
-    <Compile Include="ItemInfo.cs" />
+    <Compile Include="PricingRule.cs" />
     <Compile Include="PricingRules.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

@@ -1,9 +1,11 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 
 namespace MyUniDays
 {
     public class UnidaysDiscountChallenge
     {
+        //Get Total for the Basket
         public decimal Total => CalculateTotal();
         public decimal DeliveryCharge => Total < 50.0m ? 7.0m : 0.0m;
         public Dictionary<char, int> Basket  = new Dictionary<char, int>();
@@ -15,14 +17,22 @@ namespace MyUniDays
         }
         public void AddToBasket(char item)
         {
-            if (Basket.ContainsKey(item))
+            if (pricingRules.PricingRuleExists(item))
             {
-                Basket[item]++;
+                if (Basket.ContainsKey(item))
+                {
+                    Basket[item]++;
+                }
+                else
+                {
+                    Basket.Add(item, 1);
+                }
             }
             else
             {
-                Basket.Add(item, 1);
+               throw new ArgumentException("Cannot find this item in the pricing rules");
             }
+            
         }
 
         public void AddToBasketBulk(string items)
